@@ -6,7 +6,9 @@ class SearchFacade
   end
 
   def all_stations
-  # API CALL
+    response = conn.get
+    data = JSON.parse(response.body, symbolize_names: true)[:fuel_stations]
+    binding.pry
   end
 
   # def closest_stations
@@ -18,11 +20,11 @@ private
 
 def conn
   Faraday.new("https://developer.nrel.gov/api/alt-fuel-stations/v1/nearest") do |f|
-
-
+  f.params["api_key"] = ENV["NREL_API_KEY"]
+  f.params["location"] = @query
+  f.params["format"] = "json"
+  f.adapter Faraday.default_adapter
   end
-
-
 
 end
 # successful API Call
