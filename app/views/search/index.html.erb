@@ -1,25 +1,25 @@
-<h1>Search Results!</h1>
- <%# add query in results section %>
+<h1><%= facade.all_stations.count %> Search Results for: <%= params[:q].to_i %></h1>
 
-<h4>All Stations</h4>
+ <h2>Closest Stations</h2>
+ <section class="closest_stations">
+
+   <% facade.closest_stations(15).each do |station| %>
+   <ul class ="close_station">
+     <li>Name: <%= station.name %></li>
+     <li>Address: <%= station.address %></li>
+     <li>Fuel Types: <%= station.fuel_type %></li>
+     <li>Distance: <%= station.distance %></li>
+     <li>Access Times: <%= station.access_times %></li>
+   </ul>
+   <% end %>
+ </section>
+
+
+<h2>All Stations</h2>
 <section class="all_stations">
 
 <% facade.all_stations.each do |station| %>
     <ul class ="station">
-      <li>Name: <%= station.name %></li>
-      <li>Address: <%= station.address %></li>
-      <li>Fuel Types: <%= station.fuel_type %></li>
-      <li>Distance: <%= station.distance %></li>
-      <li>Access Times: <%= station.access_times %></li>
-    </ul>
-    <% end %>
-</section>
-
-
-<h4>Closest Stations</h4>
-<section class="closest_stations">
-<% facade.closest_stations(15).each do |station| %>
-    <ul class ="close_station">
       <li>Name: <%= station.name %></li>
       <li>Address: <%= station.address %></li>
       <li>Fuel Types: <%= station.fuel_type %></li>
