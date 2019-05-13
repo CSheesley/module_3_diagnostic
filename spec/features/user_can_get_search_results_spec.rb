@@ -17,7 +17,7 @@ describe 'As a User on the homepage' do
       expect(current_path).to eq("/search")
 
       # Then I should see the total results of the stations that match my query, 90.
-      expect(page).to have_css('.station', count: 90)
+      expect(page).to have_css('.station', count: 93)
 
       # Then I should see a list of the 15 closest stations within 5 miles sorted by distance
       expect(page).to have_css('.closest', count: 15)
