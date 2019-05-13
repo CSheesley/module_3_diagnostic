@@ -20,7 +20,7 @@ describe 'As a User on the homepage' do
       expect(page).to have_css('.station', count: 93)
 
       # Then I should see a list of the 15 closest stations within 5 miles sorted by distance
-      expect(page).to have_css('.closest', count: 15)
+      expect(page).to have_css('.close_station', count: 15)
       # sort by distance
       # And the stations should be limited to Electric and Propane
       # And the stations should only be public, and not private, planned or temporarily unavailable.

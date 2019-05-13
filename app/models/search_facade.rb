@@ -11,8 +11,17 @@ class SearchFacade
     end
   end
 
-  # def closest_stations
-  # end
+  def closest_stations(limit)
+    sorted = station_data.sort_by {
+      |station| station[:distance]
+    }
+    closest = sorted.take(limit)
+    closest.map do |station_data|
+      Station.new(station_data)
+    end
+
+  end
+
 
 end
 
