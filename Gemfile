@@ -16,6 +16,8 @@ gem 'rake', '12.3.0'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
+  gem 'pry'
+  gem 'capybara'
 end
 
 group :development do
