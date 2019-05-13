@@ -9,7 +9,7 @@ describe 'As a User on the homepage' do
 
       # And I fill in the search form with 80206 (Note: Use the existing search form)
       fill_in :q, with: "80206"
-  
+
       # And I click "Locate"
       click_on("Locate")
 
